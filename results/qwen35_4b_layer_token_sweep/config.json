@@ -1,0 +1,6 @@
+{
+  "model": "Qwen/Qwen3.5-4B",
+  "stimuli": "stimuli.json",
+  "tail_width": 5,
+  "selection_rule": "maximize min(validation addition effect, validation ablation reduction)"
+}

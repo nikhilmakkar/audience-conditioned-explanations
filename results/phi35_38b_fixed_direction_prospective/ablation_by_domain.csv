@@ -1,0 +1,9 @@
+source,baseline_gap,selected_layer_ablation_reduction,all_layer_ablation_reduction
+anchorshift,3.125,-0.3125,0.1875
+driftgate,-2.125,1.0,0.875
+fluxpatch,4.625,0.4375,1.0625
+motifbridge,2.875,0.625,0.375
+phasenest,5.5625,0.625,2.000000014901161
+phasesar,0.875,-0.125,0.0
+quorumweave,0.8125,-0.1875,-0.1875
+shardbloom,-1.0625,0.3125,-1.5

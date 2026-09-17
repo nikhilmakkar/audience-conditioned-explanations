@@ -1,0 +1,83 @@
+{
+  "sources": [
+    {
+      "id": "resnet",
+      "role": "cv",
+      "citation": "He et al., Deep Residual Learning for Image Recognition, CVPR 2016",
+      "passage": "Increasing the depth of a conventional convolutional network can increase training error, even though the added layers could in principle implement identity mappings. A residual block instead learns a residual function F(x) and adds the input through a shortcut, producing F(x) + x. Identity shortcuts add no parameters when dimensions match; learned projections can reconcile dimension changes. This parameterization makes an identity mapping easier to represent and enabled substantially deeper networks to be optimized.",
+      "technical_summary": "ResNet mitigates degradation by parameterizing blocks as F(x) + x rather than learning H(x) directly. Identity shortcuts ease optimization without extra parameters, while projection shortcuts handle dimension changes, enabling substantially deeper CNNs.",
+      "accessible_summary": "ResNet makes deeper image models easier to optimize by letting each block learn only a change to its input, then adding the original input back. Adjusted shortcuts are used when the representations have different sizes."
+    },
+    {
+      "id": "transformer",
+      "role": "sequence",
+      "citation": "Vaswani et al., Attention Is All You Need, NeurIPS 2017",
+      "passage": "The Transformer replaces recurrence and convolution with attention mechanisms. Encoder layers combine multi-head self-attention with position-wise feed-forward networks. Decoder layers also attend to encoder outputs and mask future positions. Scaled dot-product attention compares queries with keys, applies a softmax, and uses the weights to combine values. Multiple heads operate in different learned subspaces. Because there is no recurrence, positional information is added separately and training can be parallelized across sequence positions.",
+      "technical_summary": "The Transformer replaces recurrence with multi-head self-attention and position-wise feed-forward layers. Scaled query-key attention mixes value vectors; positional encodings supply order and causal masks prevent decoder access to future tokens.",
+      "accessible_summary": "The Transformer handles a sequence by letting each token weigh information from other tokens instead of processing them strictly one at a time. It separately records order and hides future tokens during generation, allowing parallel training."
+    },
+    {
+      "id": "unet",
+      "role": "biomedical_cv",
+      "citation": "Ronneberger et al., U-Net: Convolutional Networks for Biomedical Image Segmentation, MICCAI 2015",
+      "passage": "U-Net is a convolutional architecture for dense image segmentation. Its contracting path repeatedly applies convolutions and downsampling to capture context. A symmetric expanding path upsamples feature maps to recover spatial resolution. At each scale, feature maps from the contracting path are concatenated with the corresponding expanding-path features. These skip connections restore fine spatial information that would otherwise be lost during downsampling, allowing precise localization even when only a limited number of annotated biomedical images are available.",
+      "technical_summary": "U-Net couples a convolutional encoder with a symmetric upsampling decoder for dense segmentation. Cross-scale skip concatenations restore high-resolution encoder features, combining contextual representations with precise localization under limited labelled data.",
+      "accessible_summary": "U-Net labels each part of an image by first shrinking the image representation to understand context and then expanding it to recover detail. Shortcuts copy fine information from each shrinking stage to the matching expanding stage."
+    },
+    {
+      "id": "kriging",
+      "role": "geospatial",
+      "citation": "Standard ordinary kriging formulation",
+      "passage": "Ordinary kriging predicts a spatial variable at an unobserved location using a weighted combination of nearby observations. The weights are obtained from a fitted variogram or covariance model and constrained to sum to one, giving an unbiased linear predictor when the unknown mean is locally constant. Observations are not weighted by distance alone: their spatial covariance and redundancy with one another also matter. The same model yields a kriging variance that quantifies uncertainty induced by the sampling geometry and assumed spatial dependence.",
+      "technical_summary": "Ordinary kriging is a best linear unbiased predictor under an unknown constant mean. Variogram-derived covariance determines weights subject to a unit-sum constraint, accounting for inter-sample redundancy and yielding a model-based kriging variance.",
+      "accessible_summary": "Ordinary kriging estimates a value at an unmeasured location by combining nearby measurements. It considers both proximity and how measurements vary together, avoids counting redundant observations twice, and reports uncertainty based on the sampling pattern."
+    }
+  ],
+  "profiles": {
+    "relevant_researcher": [
+      {"split": "train", "text": "The reader conducts machine-learning research, regularly reads technical papers, and wants a concise account of the mechanism."},
+      {"split": "train", "text": "The reader studies neural-network methods professionally, is quantitatively trained, and prefers precise terminology in short summaries."},
+      {"split": "train", "text": "The reader evaluates ML research and wants the central technical contribution without introductory teaching."},
+      {"split": "train", "text": "The reader publishes research on learned models and can follow compact mathematical or architectural descriptions."},
+      {"split": "validation", "text": "The reader is an AI researcher accustomed to conference papers and wants a brief but technically faithful explanation."},
+      {"split": "validation", "text": "The reader works on representation learning and values field-standard terms when they compress the explanation."},
+      {"split": "test", "text": "The reader has research-level knowledge of modern ML and asks for a short explanation preserving the operative details."},
+      {"split": "test", "text": "The reader routinely reviews neural-network papers and wants the mechanism stated directly and concisely."},
+      {"split": "test", "text": "The reader is a quantitatively sophisticated ML scientist who does not need standard concepts unpacked."}
+    ],
+    "irrelevant_researcher": [
+      {"split": "train", "text": "The reader conducts materials-science research, regularly reads technical papers, and wants a concise account of the mechanism."},
+      {"split": "train", "text": "The reader studies fluid mechanics professionally, is quantitatively trained, and prefers precise terminology in short summaries."},
+      {"split": "train", "text": "The reader evaluates experimental-biology research and wants the central contribution without unnecessary introductory teaching."},
+      {"split": "train", "text": "The reader publishes research in geochemistry and can follow compact mathematical descriptions, but has not studied ML."},
+      {"split": "validation", "text": "The reader is a physics researcher accustomed to technical papers and wants a brief explanation, but is new to neural networks."},
+      {"split": "validation", "text": "The reader works on quantitative ecology and values precise terms when they help, but lacks machine-learning background."},
+      {"split": "test", "text": "The reader has research-level knowledge in chemistry and asks for a short explanation, but does not know modern ML methods."},
+      {"split": "test", "text": "The reader routinely reviews geology papers and wants the mechanism stated concisely, but is unfamiliar with neural-network terminology."},
+      {"split": "test", "text": "The reader is a quantitatively sophisticated social scientist who has not previously studied machine learning."}
+    ],
+    "relevant_practitioner": [
+      {"split": "train", "text": "The reader builds machine-learning systems in industry, regularly reads technical documentation, and wants a concise account of the mechanism."},
+      {"split": "train", "text": "The reader implements neural networks professionally and prefers precise terminology in short explanations."},
+      {"split": "train", "text": "The reader deploys ML models and wants the central technical contribution without introductory teaching."},
+      {"split": "train", "text": "The reader is an experienced ML engineer who can follow compact architectural descriptions but does not conduct research."},
+      {"split": "validation", "text": "The reader develops AI products, knows standard neural-network concepts, and wants a brief but technically faithful explanation."},
+      {"split": "validation", "text": "The reader works with trained models daily and values field-standard terms when they compress an explanation."},
+      {"split": "test", "text": "The reader has practical knowledge of modern ML and asks for a short explanation preserving the operative details."},
+      {"split": "test", "text": "The reader routinely implements neural architectures and wants the mechanism stated directly and concisely."},
+      {"split": "test", "text": "The reader is a technically sophisticated ML practitioner who does not need standard concepts unpacked."}
+    ],
+    "irrelevant_practitioner": [
+      {"split": "train", "text": "The reader builds database systems in industry, regularly reads technical documentation, and wants a concise account of the mechanism."},
+      {"split": "train", "text": "The reader implements network infrastructure professionally and prefers precise terminology in short explanations."},
+      {"split": "train", "text": "The reader deploys backend services and wants the central contribution without unnecessary introductory teaching."},
+      {"split": "train", "text": "The reader is an experienced software engineer who can follow compact system descriptions but has not worked with ML."},
+      {"split": "validation", "text": "The reader develops distributed systems, knows standard computing concepts, and wants a brief explanation, but is new to neural networks."},
+      {"split": "validation", "text": "The reader works with production software daily and values precise terms when they help, but lacks machine-learning background."},
+      {"split": "test", "text": "The reader has practical knowledge of modern software and asks for a short explanation, but does not know ML methods."},
+      {"split": "test", "text": "The reader routinely implements data pipelines and wants the mechanism stated concisely, but is unfamiliar with neural-network terminology."},
+      {"split": "test", "text": "The reader is a technically sophisticated software practitioner who has not previously studied machine learning."}
+    ]
+  },
+  "instruction": "The source is followed by two factually intended summaries. Choose the summary that would be more useful to the described reader. Judge usefulness for that reader, not which prose style you personally prefer. Reply with exactly A or B and no explanation."
+}

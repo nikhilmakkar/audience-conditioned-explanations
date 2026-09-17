@@ -1,0 +1,8 @@
+{
+  "model": "Qwen/Qwen3.5-4B",
+  "discovery": "stimuli_domain_matched_8.json",
+  "test": "stimuli_prospective_synthetic.json",
+  "layer": 17,
+  "random_controls": 100,
+  "permutation_controls": 100
+}

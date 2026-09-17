@@ -1,0 +1,7 @@
+source_id,intervention,selected_layer,baseline_gap,ablated_gap,gap_reduction
+resnet,attention,21,6.3125,5.9375,0.375
+resnet,mlp,2,6.3125,5.5625,0.75
+resnet,selected_attention_and_mlp,21+2,6.3125,5.375,0.9375
+transformer,attention,21,6.8125,6.375,0.4375
+transformer,mlp,2,6.8125,6.75,0.0625
+transformer,selected_attention_and_mlp,21+2,6.8125,6.375,0.4375

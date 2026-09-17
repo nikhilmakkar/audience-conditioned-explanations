@@ -1,0 +1,7 @@
+# Versions used for the reported experiments (CUDA 12.4 environment).
+torch==2.6.0
+transformers==5.16.1
+accelerate==1.14.0
+numpy==2.2.6
+matplotlib==3.10.9
+reportlab==5.0.1

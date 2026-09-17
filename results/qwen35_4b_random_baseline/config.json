@@ -1,0 +1,8 @@
+{
+  "model": "Qwen/Qwen3.5-4B",
+  "stimuli": "stimuli.json",
+  "directions": "results/qwen35_4b_direction/directions.pt",
+  "output_dir": "results/qwen35_4b_random_baseline",
+  "seeds": 20,
+  "alpha": 2.0
+}

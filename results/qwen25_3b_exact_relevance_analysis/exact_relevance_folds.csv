@@ -1,0 +1,9 @@
+source,selected_layer,selected_position,baseline_gap,addition_effect,single_layer_ablation_reduction,all_layer_ablation_reduction,random_additions_ge_learned,random_additions_n
+bert,19,-3,3.0625,0.25,-0.0625,-0.1875,20,100
+ddpm,15,-2,0.5625,0.34375,0.75,-0.125,2,100
+gcn,6,-3,1.0625,0.125,0.4375,-0.1875,28,100
+kriging,16,-3,0.6875,0.15625,0.5625,0.5625,25,100
+resnet,10,-3,0.375,0.09375,-0.125,-0.3125,72,100
+transformer,6,-3,-0.0625,0.125,0.0,0.375,44,100
+unet,15,-2,0.0625,0.3125,0.6875,-0.0625,5,100
+xgboost,15,-2,-2.375,0.15625,0.0,-2.0,12,100

@@ -1,0 +1,3 @@
+test_set,mean_gap,positive_domains,exact_one_sided_p,auc,discovery_midpoint_accuracy
+stimuli_prospective_synthetic,0.2850847893860191,8,0.00390625,0.80859375,0.625
+stimuli_prospective_profile_paraphrase,0.32899855310097337,8,0.00390625,0.8359375,0.71875

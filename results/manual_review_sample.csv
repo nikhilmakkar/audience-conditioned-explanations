@@ -1,0 +1,145 @@
+model,example_id,prompt,generation,human_factually_correct_yes_no,human_audience_fit_1_to_5,human_notes
+qwen35_4b,kriging:domain_expert:train:3,"Write a concise 2-3 sentence gist of the source passage for the described reader. Preserve the central mechanism and use the level of technical detail useful to that reader. Do not mention the reader profile.
+
+Reader profile:
+The reader has graduate-level expertise in geostatistics, variograms, and spatial interpolation. They requested a compact account of the central contribution.
+
+Source passage:
+Ordinary kriging predicts a spatial variable at an unobserved location using a weighted combination of nearby observations. The weights are obtained from a fitted variogram or covariance model and constrained to sum to one, giving an unbiased linear predictor when the unknown mean is locally constant. Observations are not weighted by distance alone: their spatial covariance and redundancy with one another also matter. The same model yields a kriging variance that quantifies uncertainty induced by the sampling geometry and assumed spatial dependence.
+
+Gist:","Ordinary kriging constructs an unbiased linear predictor for unobserved locations by weighting nearby observations based on a fitted variogram or covariance model, where weights are constrained to sum to one. This approach accounts for the spatial covariance and redundancy among observations rather than relying solely on distance, ensuring the predictor remains unbiased under the assumption of a locally constant mean. The resulting kriging variance quantifies the uncertainty in the prediction, reflecting the influence of the sampling geometry and the assumed spatial dependence structure.",,,
+qwen25_3b,transformer:domain_expert:train:3,"Write a concise 2-3 sentence gist of the source passage for the described reader. Preserve the central mechanism and use the level of technical detail useful to that reader. Do not mention the reader profile.
+
+Reader profile:
+The reader has graduate-level expertise in attention-based language and sequence models. They requested a compact account of the central contribution.
+
+Source passage:
+The Transformer replaces recurrence and convolution with attention mechanisms. Encoder layers combine multi-head self-attention with position-wise feed-forward networks. Decoder layers also attend to encoder outputs and mask future positions. Scaled dot-product attention compares queries with keys, applies a softmax, and uses the weights to combine values. Multiple heads operate in different learned subspaces. Because there is no recurrence, positional information is added separately and training can be parallelized across sequence positions.
+
+Gist:","The Transformer architecture replaces recurrence and convolution with attention mechanisms, specifically scaled dot-product attention, which combines multi-head self-attention with position-wise feed-forward networks. Encoder and decoder layers both incorporate attention to encoder outputs and mask future positions, leveraging multiple attention heads operating in different learned subspaces to process sequences without recurrence, thus enabling parallelization across sequence positions.",,,
+qwen25_3b,unet:matched_other_expert:train:1,"Write a concise 2-3 sentence gist of the source passage for the described reader. Preserve the central mechanism and use the level of technical detail useful to that reader. Do not mention the reader profile.
+
+Reader profile:
+The reader has extensive professional knowledge of molecular genetics. They want to understand the main mechanism briefly.
+
+Source passage:
+U-Net is a convolutional architecture for dense image segmentation. Its contracting path repeatedly applies convolutions and downsampling to capture context. A symmetric expanding path upsamples feature maps to recover spatial resolution. At each scale, feature maps from the contracting path are concatenated with the corresponding expanding-path features. These skip connections restore fine spatial information that would otherwise be lost during downsampling, allowing precise localization even when only a limited number of annotated biomedical images are available.
+
+Gist:","U-Net employs a contracting path with repeated convolutions and downsampling to capture context, followed by an expanding path that upsamples feature maps to recover spatial resolution. Skip connections between corresponding feature maps from the contracting and expanding paths ensure that fine spatial information is preserved, enabling accurate localization despite limited annotated data.",,,
+qwen35_4b,resnet:matched_other_expert:validation:4,"Write a concise 2-3 sentence gist of the source passage for the described reader. Preserve the central mechanism and use the level of technical detail useful to that reader. Do not mention the reader profile.
+
+Reader profile:
+The reader routinely evaluates research about computational fluid dynamics. They want a short, informative summary.
+
+Source passage:
+Increasing the depth of a conventional convolutional network can increase training error, even though the added layers could in principle implement identity mappings. A residual block instead learns a residual function F(x) and adds the input through a shortcut, producing F(x) + x. Identity shortcuts add no parameters when dimensions match; learned projections can reconcile dimension changes. This parameterization makes an identity mapping easier to represent and enabled substantially deeper networks to be optimized.
+
+Gist:","Conventional convolutional networks often suffer from increased training error as depth increases, even when added layers theoretically implement identity mappings. Residual blocks address this by learning a residual function F(x) and adding the input via a shortcut connection, resulting in an output of F(x) + x. This parameterization simplifies the representation of identity mappings and enables the optimization of substantially deeper networks.",,,
+qwen25_3b,transformer:matched_other_expert:test:7,"Write a concise 2-3 sentence gist of the source passage for the described reader. Preserve the central mechanism and use the level of technical detail useful to that reader. Do not mention the reader profile.
+
+Reader profile:
+The reader is an experienced researcher in computational fluid dynamics. They requested a brief summary of the key mechanism.
+
+Source passage:
+The Transformer replaces recurrence and convolution with attention mechanisms. Encoder layers combine multi-head self-attention with position-wise feed-forward networks. Decoder layers also attend to encoder outputs and mask future positions. Scaled dot-product attention compares queries with keys, applies a softmax, and uses the weights to combine values. Multiple heads operate in different learned subspaces. Because there is no recurrence, positional information is added separately and training can be parallelized across sequence positions.
+
+Gist:","The Transformer architecture replaces recurrence and convolution with attention mechanisms, specifically scaled dot-product attention, which combines multi-head self-attention with position-wise feed-forward networks. Encoder and decoder layers both attend to encoder outputs and mask future positions, leveraging multiple attention heads operating in different learned subspaces to process sequences without recurrence, thus enabling parallelization across sequence positions.",,,
+qwen35_4b,resnet:domain_expert:validation:5,"Write a concise 2-3 sentence gist of the source passage for the described reader. Preserve the central mechanism and use the level of technical detail useful to that reader. Do not mention the reader profile.
+
+Reader profile:
+The reader works professionally on deep convolutional networks for computer vision. They asked for the gist of the passage.
+
+Source passage:
+Increasing the depth of a conventional convolutional network can increase training error, even though the added layers could in principle implement identity mappings. A residual block instead learns a residual function F(x) and adds the input through a shortcut, producing F(x) + x. Identity shortcuts add no parameters when dimensions match; learned projections can reconcile dimension changes. This parameterization makes an identity mapping easier to represent and enabled substantially deeper networks to be optimized.
+
+Gist:","Standard convolutional networks often suffer from increased training error as depth grows, even when layers theoretically implement identity mappings. Residual blocks solve this by learning a residual function F(x) and adding the input via a shortcut connection, resulting in an output of F(x) + x. This parameterization simplifies the representation of identity mappings, enabling the optimization of substantially deeper networks.",,,
+qwen25_3b,resnet:matched_other_expert:train:3,"Write a concise 2-3 sentence gist of the source passage for the described reader. Preserve the central mechanism and use the level of technical detail useful to that reader. Do not mention the reader profile.
+
+Reader profile:
+The reader has graduate-level expertise in computational fluid dynamics. They requested a compact account of the central contribution.
+
+Source passage:
+Increasing the depth of a conventional convolutional network can increase training error, even though the added layers could in principle implement identity mappings. A residual block instead learns a residual function F(x) and adds the input through a shortcut, producing F(x) + x. Identity shortcuts add no parameters when dimensions match; learned projections can reconcile dimension changes. This parameterization makes an identity mapping easier to represent and enabled substantially deeper networks to be optimized.
+
+Gist:","Adding depth to a conventional convolutional network increases training error due to the necessity of implementing non-trivial functions. In contrast, residual blocks learn a residual function \( F(x) \) and add it to the input via a shortcut connection, effectively allowing the network to train deeper without increasing training error, as identity shortcuts require no additional parameters when dimensions match, and learned projections can handle dimensionality changes.",,,
+qwen25_3b,unet:domain_expert:validation:4,"Write a concise 2-3 sentence gist of the source passage for the described reader. Preserve the central mechanism and use the level of technical detail useful to that reader. Do not mention the reader profile.
+
+Reader profile:
+The reader routinely evaluates research about neural networks for biomedical image segmentation. They want a short, informative summary.
+
+Source passage:
+U-Net is a convolutional architecture for dense image segmentation. Its contracting path repeatedly applies convolutions and downsampling to capture context. A symmetric expanding path upsamples feature maps to recover spatial resolution. At each scale, feature maps from the contracting path are concatenated with the corresponding expanding-path features. These skip connections restore fine spatial information that would otherwise be lost during downsampling, allowing precise localization even when only a limited number of annotated biomedical images are available.
+
+Gist:","U-Net is a convolutional neural network designed for biomedical image segmentation. It employs a contracting path with repeated convolutions and downsampling to capture contextual information, followed by an expanding path that upsamples feature maps to recover spatial resolution. Skip connections between the contracting and expanding paths ensure that fine spatial details are preserved, enabling accurate localization despite limited annotated data.",,,
+qwen35_4b,unet:domain_expert:train:3,"Write a concise 2-3 sentence gist of the source passage for the described reader. Preserve the central mechanism and use the level of technical detail useful to that reader. Do not mention the reader profile.
+
+Reader profile:
+The reader has graduate-level expertise in neural networks for biomedical image segmentation. They requested a compact account of the central contribution.
+
+Source passage:
+U-Net is a convolutional architecture for dense image segmentation. Its contracting path repeatedly applies convolutions and downsampling to capture context. A symmetric expanding path upsamples feature maps to recover spatial resolution. At each scale, feature maps from the contracting path are concatenated with the corresponding expanding-path features. These skip connections restore fine spatial information that would otherwise be lost during downsampling, allowing precise localization even when only a limited number of annotated biomedical images are available.
+
+Gist:","U-Net employs a symmetric encoder-decoder architecture where the contracting path captures multi-scale context via repeated downsampling, and the expanding path restores spatial resolution through upsampling. Crucially, skip connections concatenate features from both paths at each scale to preserve fine-grained spatial details lost during downsampling, enabling precise localization in biomedical image segmentation even with limited annotated data.",,,
+qwen25_3b,resnet:domain_expert:test:6,"Write a concise 2-3 sentence gist of the source passage for the described reader. Preserve the central mechanism and use the level of technical detail useful to that reader. Do not mention the reader profile.
+
+Reader profile:
+The reader is deeply familiar with deep convolutional networks for computer vision. They want the core idea explained concisely.
+
+Source passage:
+Increasing the depth of a conventional convolutional network can increase training error, even though the added layers could in principle implement identity mappings. A residual block instead learns a residual function F(x) and adds the input through a shortcut, producing F(x) + x. Identity shortcuts add no parameters when dimensions match; learned projections can reconcile dimension changes. This parameterization makes an identity mapping easier to represent and enabled substantially deeper networks to be optimized.
+
+Gist:","Increasing the depth of a conventional convolutional network leads to higher training error due to the inability to implement identity mappings. In contrast, residual blocks learn a residual function \(F(x)\) and add it to the input via a shortcut connection, effectively allowing the network to train deeper without encountering issues related to identity mappings, as identity shortcuts have zero parameters when dimensions match, and learned projections can handle dimensionality changes.",,,
+qwen35_4b,transformer:domain_expert:validation:5,"Write a concise 2-3 sentence gist of the source passage for the described reader. Preserve the central mechanism and use the level of technical detail useful to that reader. Do not mention the reader profile.
+
+Reader profile:
+The reader works professionally on attention-based language and sequence models. They asked for the gist of the passage.
+
+Source passage:
+The Transformer replaces recurrence and convolution with attention mechanisms. Encoder layers combine multi-head self-attention with position-wise feed-forward networks. Decoder layers also attend to encoder outputs and mask future positions. Scaled dot-product attention compares queries with keys, applies a softmax, and uses the weights to combine values. Multiple heads operate in different learned subspaces. Because there is no recurrence, positional information is added separately and training can be parallelized across sequence positions.
+
+Gist:","The Transformer architecture replaces recurrence and convolution with multi-head self-attention mechanisms that allow parallelized training by computing scaled dot-product attention between queries, keys, and values. Encoder layers process input sequences using position-wise feed-forward networks combined with self-attention, while decoder layers attend to both encoder outputs and masked future positions to generate predictions. This design enables the model to capture long-range dependencies efficiently without relying on sequential processing or explicit recurrence.",,,
+qwen35_4b,kriging:matched_other_expert:train:2,"Write a concise 2-3 sentence gist of the source passage for the described reader. Preserve the central mechanism and use the level of technical detail useful to that reader. Do not mention the reader profile.
+
+Reader profile:
+The reader publishes technical work on deep neural-network optimization. Give them whichever short summary would be more useful.
+
+Source passage:
+Ordinary kriging predicts a spatial variable at an unobserved location using a weighted combination of nearby observations. The weights are obtained from a fitted variogram or covariance model and constrained to sum to one, giving an unbiased linear predictor when the unknown mean is locally constant. Observations are not weighted by distance alone: their spatial covariance and redundancy with one another also matter. The same model yields a kriging variance that quantifies uncertainty induced by the sampling geometry and assumed spatial dependence.
+
+Gist:","Ordinary kriging predicts values at unobserved locations by combining nearby observations with weights derived from a fitted variogram or covariance model, ensuring the predictor remains unbiased when the local mean is constant. Unlike simple distance-based interpolation, this method accounts for the spatial covariance and redundancy among observations to generate optimal predictions. Additionally, the model produces a kriging variance that quantifies the uncertainty arising from the specific sampling geometry and assumed spatial dependence.",,,
+qwen35_4b,transformer:matched_other_expert:train:0,"Write a concise 2-3 sentence gist of the source passage for the described reader. Preserve the central mechanism and use the level of technical detail useful to that reader. Do not mention the reader profile.
+
+Reader profile:
+The reader researches computational fluid dynamics. They regularly read papers and want a concise summary of this passage.
+
+Source passage:
+The Transformer replaces recurrence and convolution with attention mechanisms. Encoder layers combine multi-head self-attention with position-wise feed-forward networks. Decoder layers also attend to encoder outputs and mask future positions. Scaled dot-product attention compares queries with keys, applies a softmax, and uses the weights to combine values. Multiple heads operate in different learned subspaces. Because there is no recurrence, positional information is added separately and training can be parallelized across sequence positions.
+
+Gist:","The Transformer architecture replaces recurrent and convolutional operations with multi-head self-attention mechanisms that compute weighted combinations of values based on query-key interactions. This design eliminates recurrence, allowing for parallelized training across sequence positions while requiring separate positional encodings to maintain sequence order. Additionally, the decoder utilizes masked attention to attend to encoder outputs and prevent information leakage from future positions during training.",,,
+qwen25_3b,kriging:domain_expert:train:3,"Write a concise 2-3 sentence gist of the source passage for the described reader. Preserve the central mechanism and use the level of technical detail useful to that reader. Do not mention the reader profile.
+
+Reader profile:
+The reader has graduate-level expertise in geostatistics, variograms, and spatial interpolation. They requested a compact account of the central contribution.
+
+Source passage:
+Ordinary kriging predicts a spatial variable at an unobserved location using a weighted combination of nearby observations. The weights are obtained from a fitted variogram or covariance model and constrained to sum to one, giving an unbiased linear predictor when the unknown mean is locally constant. Observations are not weighted by distance alone: their spatial covariance and redundancy with one another also matter. The same model yields a kriging variance that quantifies uncertainty induced by the sampling geometry and assumed spatial dependence.
+
+Gist:","Ordinary kriging predicts values at unobserved locations by combining nearby observations with weights derived from a variogram model, which accounts for both spatial covariance and observation redundancy. These weights ensure an unbiased prediction when the mean is constant locally, and they also provide a measure of prediction uncertainty through the kriging variance.",,,
+qwen35_4b,unet:matched_other_expert:validation:5,"Write a concise 2-3 sentence gist of the source passage for the described reader. Preserve the central mechanism and use the level of technical detail useful to that reader. Do not mention the reader profile.
+
+Reader profile:
+The reader works professionally on molecular genetics. They asked for the gist of the passage.
+
+Source passage:
+U-Net is a convolutional architecture for dense image segmentation. Its contracting path repeatedly applies convolutions and downsampling to capture context. A symmetric expanding path upsamples feature maps to recover spatial resolution. At each scale, feature maps from the contracting path are concatenated with the corresponding expanding-path features. These skip connections restore fine spatial information that would otherwise be lost during downsampling, allowing precise localization even when only a limited number of annotated biomedical images are available.
+
+Gist:","U-Net employs a symmetric architecture with a contracting path that downsamples to capture context and an expanding path that upsamples to restore spatial resolution. By concatenating features from both paths via skip connections, the model preserves fine-grained spatial details lost during downsampling, enabling precise localization in biomedical image segmentation even with limited annotated data.",,,
+qwen25_3b,kriging:matched_other_expert:train:3,"Write a concise 2-3 sentence gist of the source passage for the described reader. Preserve the central mechanism and use the level of technical detail useful to that reader. Do not mention the reader profile.
+
+Reader profile:
+The reader has graduate-level expertise in deep neural-network optimization. They requested a compact account of the central contribution.
+
+Source passage:
+Ordinary kriging predicts a spatial variable at an unobserved location using a weighted combination of nearby observations. The weights are obtained from a fitted variogram or covariance model and constrained to sum to one, giving an unbiased linear predictor when the unknown mean is locally constant. Observations are not weighted by distance alone: their spatial covariance and redundancy with one another also matter. The same model yields a kriging variance that quantifies uncertainty induced by the sampling geometry and assumed spatial dependence.
+
+Gist:","Ordinary kriging predicts spatial variables at unobserved locations by combining nearby observations with weights derived from a fitted variogram or covariance model, ensuring the weights sum to one to produce an unbiased linear predictor. These weights consider both the spatial covariance and redundancy among observations, and the model also provides a kriging variance that reflects the uncertainty due to the sampling design and assumed spatial dependence.",,,

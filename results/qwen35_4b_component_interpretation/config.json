@@ -1,0 +1,10 @@
+{
+  "model": "Qwen/Qwen3.5-4B",
+  "layer": 17,
+  "subspace": "results/qwen35_4b_multidimensional_subspace/relevance_subspace.pt",
+  "test": "stimuli_prospective_synthetic.json",
+  "discovery": "stimuli_domain_matched_8.json",
+  "generation_prompts": 12,
+  "decoding": "greedy",
+  "max_new_tokens": 128
+}

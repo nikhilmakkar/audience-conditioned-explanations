@@ -1,0 +1,16 @@
+{
+  "model": "Qwen/Qwen3.5-4B",
+  "stimuli": "stimuli_prospective_synthetic.json",
+  "direction": "results/qwen35_4b_fixed_direction_prospective/fixed_direction.pt",
+  "layer": 17,
+  "alphas": [
+    -2.0,
+    -1.0,
+    0.0,
+    1.0,
+    2.0
+  ],
+  "max_new_tokens": 128,
+  "decoding": "greedy",
+  "rows": 160
+}

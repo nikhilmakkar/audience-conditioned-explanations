@@ -1,0 +1,65 @@
+{
+  "sources": [
+    {
+      "id": "resnet",
+      "role": "discovery",
+      "citation": "He et al., Deep Residual Learning for Image Recognition, CVPR 2016",
+      "source_url": "https://arxiv.org/abs/1512.03385",
+      "passage": "Increasing the depth of a conventional convolutional network can produce a degradation problem: training error can become higher even when extra layers should in principle be able to implement identity mappings. Residual networks address this optimization problem by asking a stack of layers to learn a residual function F(x) relative to its input x. An identity shortcut then adds x to the learned residual, giving the block output F(x) + x. The shortcut introduces neither additional parameters nor computational cost when dimensions match. Projection shortcuts can be used when dimensions change. This parameterization makes identity mappings easier to represent and enabled substantially deeper networks to be optimized successfully.",
+      "technical_summary": "ResNet addresses degradation by parameterizing a block as F(x) + x rather than directly learning H(x). Parameter-free identity shortcuts make identity mappings easy to represent, while learned projections handle dimension changes, improving optimization of substantially deeper CNNs.",
+      "accessible_summary": "ResNet makes very deep image-recognition networks easier to train by giving information a shortcut around groups of layers. A block learns only the needed change and adds it to its input, while adjusted shortcuts handle differently sized representations."
+    },
+    {
+      "id": "transformer",
+      "role": "transfer",
+      "citation": "Vaswani et al., Attention Is All You Need, NeurIPS 2017",
+      "source_url": "https://arxiv.org/abs/1706.03762",
+      "passage": "The Transformer is an encoder-decoder architecture for sequence transduction that replaces recurrence and convolution with attention mechanisms. Each encoder layer combines multi-head self-attention with a position-wise feed-forward network. Decoder layers additionally attend to encoder outputs and mask future positions during self-attention. Because the architecture has no recurrence, positional information is added to token representations. Scaled dot-product attention computes similarities between queries and keys, applies a softmax, and uses the resulting weights to combine values. Multiple heads perform this operation in different learned representation subspaces. Removing sequential recurrence permits substantially more parallel computation during training.",
+      "technical_summary": "The Transformer replaces recurrence and convolution with multi-head self-attention and position-wise feed-forward layers. Scaled dot-product attention mixes learned values using query-key similarities; positional encodings supply order, and causal masking prevents decoder access to future tokens.",
+      "accessible_summary": "The Transformer processes a sequence by letting each token decide which other tokens are relevant instead of reading them strictly one at a time. It tracks order separately and hides future words during generation, enabling more parallel training."
+    }
+  ],
+  "profiles": {
+    "expert": [
+      {"split": "train", "text": "The reader is a machine-learning researcher who regularly reads conference papers and is comfortable with mathematical descriptions of neural architectures."},
+      {"split": "train", "text": "The reader develops computer-vision models professionally and already understands standard deep-learning terminology."},
+      {"split": "train", "text": "The reader has graduate-level ML training and wants the mechanism and assumptions without introductory teaching."},
+      {"split": "train", "text": "The reader routinely implements neural-network papers and prefers field-standard terminology to analogies."},
+      {"split": "validation", "text": "The reader reviews ML manuscripts and needs a compressed account that preserves the architectural details."},
+      {"split": "validation", "text": "The reader works on representation learning and does not need basic neural-network concepts defined."},
+      {"split": "test", "text": "The reader builds and evaluates modern vision systems and wants to understand the paper's precise technical contribution."},
+      {"split": "test", "text": "The reader can follow equations and ML research prose but wants a short account of the central mechanism."}
+    ],
+    "novice": [
+      {"split": "train", "text": "The reader can program but has never taken a machine-learning course and is unfamiliar with neural-network terminology."},
+      {"split": "train", "text": "The reader is encountering deep learning for the first time and benefits from an intuitive explanation."},
+      {"split": "train", "text": "The reader has general technical literacy but does not know how modern neural-network architectures work."},
+      {"split": "train", "text": "The reader is a beginning student who wants the main intuition before learning mathematical details."},
+      {"split": "validation", "text": "The reader knows basic computing but has not previously studied computer vision or language models."},
+      {"split": "validation", "text": "The reader is curious about AI research but is unfamiliar with concepts such as residual functions and attention heads."},
+      {"split": "test", "text": "The reader has no formal ML background and wants an approachable description of why the method works."},
+      {"split": "test", "text": "The reader understands ordinary software but needs specialist ML concepts explained intuitively."}
+    ],
+    "academic_nonml": [
+      {"split": "train", "text": "The reader is an experienced materials-science researcher who reads technical papers but has not studied machine learning."},
+      {"split": "train", "text": "The reader has a doctorate in experimental biology and strong quantitative skills, but no background in neural networks."},
+      {"split": "train", "text": "The reader publishes mathematical physics research but is new to contemporary machine-learning architectures."},
+      {"split": "train", "text": "The reader is a senior engineering academic outside computer science and does not know standard deep-learning terminology."},
+      {"split": "validation", "text": "The reader is a statistically sophisticated social scientist encountering neural-network research for the first time."},
+      {"split": "validation", "text": "The reader regularly evaluates scientific evidence in chemistry but lacks domain knowledge in machine learning."},
+      {"split": "test", "text": "The reader is a technically sophisticated geologist with extensive research experience but no ML specialization."},
+      {"split": "test", "text": "The reader is an expert researcher in another quantitative field and is beginning to learn neural networks."}
+    ],
+    "neutral": [
+      {"split": "train", "text": "The reader has asked for a concise summary. No other background information is available."},
+      {"split": "train", "text": "Nothing is known about the reader beyond their request for the gist."},
+      {"split": "train", "text": "The reader's technical background has not been specified."},
+      {"split": "train", "text": "There is no additional information about the intended reader."},
+      {"split": "validation", "text": "The request provides no evidence about the reader's familiarity with this subject."},
+      {"split": "validation", "text": "The reader has not stated how much machine learning they know."},
+      {"split": "test", "text": "Assume no background details beyond the fact that the reader requested a summary."},
+      {"split": "test", "text": "No audience expertise or educational context is available."}
+    ]
+  },
+  "instruction": "The source is followed by two factually intended summaries. Choose the summary that would be more useful to the described reader. Judge usefulness for that reader, not which prose style you personally prefer. Reply with exactly A or B and no explanation."
+}

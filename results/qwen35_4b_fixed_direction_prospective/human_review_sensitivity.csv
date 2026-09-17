@@ -1,0 +1,6 @@
+analysis,encoding,n_sources,mean_effect,standard_error,positive_sources,exact_sign_flip_p,random_controls_ge_real,permuted_controls_ge_real
+addition,A/B,7,0.14285714285714285,0.013392858798541914,7,0.0078125,0,6
+addition,X/Y,7,0.15848214285714285,0.01650377607465118,7,0.0078125,,
+addition,1/2,7,0.171875,0.017385892457412868,7,0.0078125,,
+selected_layer_ablation,,7,0.044642868850912364,0.009293156725960415,6,0.015625,,
+all_layer_ablation,,7,0.06696428571428571,0.03229544154943193,5,0.0546875,,

@@ -1,0 +1,9 @@
+{
+  "model": "Qwen/Qwen3.5-4B",
+  "layer": 17,
+  "controls": 100,
+  "discovery": "stimuli_domain_matched_8.json",
+  "test": "stimuli_prospective_synthetic.json",
+  "paraphrase_test": "stimuli_prospective_profile_paraphrase.json",
+  "rank1_abs_cosine_to_fixed_mean_direction": 0.9645543098449707
+}

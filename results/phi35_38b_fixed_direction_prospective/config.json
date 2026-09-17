@@ -1,0 +1,15 @@
+{
+  "model": "microsoft/Phi-3.5-mini-instruct",
+  "discovery": "stimuli_domain_matched_8.json",
+  "test": "stimuli_prospective_synthetic.json",
+  "candidate_layers": [
+    8,
+    12,
+    16,
+    19,
+    23
+  ],
+  "selected_layer": 12,
+  "random_controls": 100,
+  "permutation_controls": 100
+}

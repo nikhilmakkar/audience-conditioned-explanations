@@ -1,0 +1,4 @@
+{
+  "model": "Qwen/Qwen2.5-3B-Instruct",
+  "stimuli": "stimuli_matched.json"
+}

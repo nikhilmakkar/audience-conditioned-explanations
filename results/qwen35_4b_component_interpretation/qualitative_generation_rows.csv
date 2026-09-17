@@ -1,0 +1,249 @@
+blind_code,prompt_index,condition,prompt,text,word_count
+ea87dc69e15a,0,baseline,Explain why Earth has seasons in three concise paragraphs.,"Earth experiences seasons primarily because its axis is tilted at an angle of approximately 23.5 degrees relative to its orbital plane around the Sun. This tilt remains fixed in direction as Earth travels along its elliptical orbit, meaning that during different parts of the year, one hemisphere leans toward the Sun while the other leans away. Consequently, the angle at which sunlight strikes the surface changes, altering the intensity and duration of solar heating received by each region.
+
+When a hemisphere is tilted toward the Sun, it receives more direct sunlight, causing the Sun's rays to concentrate over a smaller area and resulting in longer days. This increased energy input war",111
+bc550162686a,0,rank3,Explain why Earth has seasons in three concise paragraphs.,"Earth experiences seasons primarily because its axis is tilted at an angle of approximately 23.5 degrees relative to its orbital plane around the Sun. This tilt remains fixed in direction as Earth travels along its elliptical orbit, meaning that during different parts of the year, different hemispheres are tilted either toward or away from the Sun. When a hemisphere is tilted toward the Sun, it receives more direct sunlight and longer days, resulting in warmer temperatures and summer.
+
+Conversely, when a hemisphere is tilted away from the Sun, the sunlight strikes the surface at a more oblique angle, spreading the same amount of energy over a larger",107
+32650c9dfaee,0,rank7,Explain why Earth has seasons in three concise paragraphs.,"Earth experiences seasons primarily because its axis is tilted at an angle of approximately 23.5 degrees relative to its orbital plane around the Sun. This tilt remains fixed in direction as Earth travels along its elliptical orbit, meaning that during different parts of the year, one hemisphere leans toward the Sun while the other leans away. Consequently, the angle at which sunlight strikes the Earth's surface changes, altering the intensity and duration of solar heating received by each hemisphere.
+
+When a hemisphere is tilted toward the Sun, it receives more direct sunlight, causing the Sun's rays to concentrate over a smaller area and resulting in longer days. This increased energy",110
+4d99c07fe3df,1,baseline,"Give an intuitive explanation of gradient descent, including one limitation.","### Intuitive Explanation: Gradient Descent
+
+Imagine you are standing on a very foggy, mountainous landscape at night. Your goal is to reach the **bottom of the valley** (the lowest point), which represents the minimum value of a function (like minimizing error in a machine learning model). However, you cannot see the terrain ahead; you can only feel the slope beneath your feet.
+
+This is exactly how **Gradient Descent** works:
+
+1.  **Feel the Slope**: At your current location, you estimate the direction of the steepest descent. In math terms, this is the **gradient** (",93
+ed091c50b8bd,1,rank3,"Give an intuitive explanation of gradient descent, including one limitation.","### Intuitive Explanation: Gradient Descent
+
+Imagine you are standing on a very foggy, mountainous landscape at night. You cannot see the horizon, and your goal is to reach the **lowest point** in the valley (the global minimum) to find a hidden treasure. You can only feel the slope of the ground beneath your feet.
+
+This scenario is the perfect analogy for **Gradient Descent**:
+
+1.  **The Landscape**: The terrain represents your **cost function** (or loss function). The height of the ground at any point represents how ""wrong"" your current guess or model prediction is.
+2.",94
+14563f816a9f,1,rank7,"Give an intuitive explanation of gradient descent, including one limitation.","### Intuitive Explanation: Gradient Descent
+
+Imagine you are standing on a **hilly mountain** in a foggy forest, and your goal is to reach the **lowest point** (the valley floor) as quickly as possible. You cannot see the ground far ahead, but you can feel the slope beneath your feet.
+
+This scenario is the perfect analogy for **Gradient Descent**:
+
+1.  **The Landscape**: The height of the mountain at any point represents the ""cost"" or ""error"" of your current guess. You want to minimize this error.
+2.  **The Gradient**: The steepness of the",91
+4984f007405a,2,baseline,Summarize the main causes of inflation without assuming an economics degree.,"Inflation is simply the phenomenon where the price of goods and services rises over time, meaning your money buys less than it did before. While economists have complex models for it, the main causes can be understood through three everyday scenarios: **too much money chasing too few goods**, **rising costs of production**, and **expectations of the future**.
+
+Here is a breakdown of the three primary drivers:
+
+### 1. Demand-Pull Inflation (Too Much Chasing Too Few Goods)
+Imagine a popular concert where everyone wants to get in, but there are only 5,000 tickets. If everyone tries to buy",97
+17804c20baf8,2,rank3,Summarize the main causes of inflation without assuming an economics degree.,"Inflation is simply the phenomenon where the price of goods and services rises over time, meaning your money buys less than it did before. While economists have complex models for it, the main causes can be understood through three everyday scenarios: **too much money chasing too few goods**, **rising costs of production**, and **expectations of future price hikes**.
+
+Here is a breakdown of these causes in plain language:
+
+### 1. Too Much Money Chasing Too Few Goods (Demand-Pull)
+Imagine a popular concert. If the number of tickets sold (demand) stays the same, the price doesn't change. But if everyone",99
+f568fdf9d3c6,2,rank7,Summarize the main causes of inflation without assuming an economics degree.,"Inflation is simply the phenomenon where the price of goods and services rises over time, meaning your money buys less than it did before. While economists have complex models for it, the main causes can be understood through three everyday scenarios: **too much money chasing too few goods**, **rising costs of production**, and **expectations of future price hikes**.
+
+Here is a breakdown of these causes in plain language:
+
+### 1. Too Much Money Chasing Too Few Goods (Demand-Pull)
+Imagine a popular concert. If the number of fans (demand) stays the same but the number of tickets available (supply) drops,",99
+b7497a7f5d83,3,baseline,Write Python pseudocode for binary search and explain its time complexity.,"### Python Pseudocode for Binary Search
+
+Here is the implementation of the **Binary Search** algorithm in Python pseudocode. This version assumes the input list `arr` is **sorted**.
+
+```python
+function binary_search(arr, target):
+    # Initialize left and right pointers
+    left = 0
+    right = length(arr) - 1
+
+    # Loop while the search space is valid
+    while left <= right:
+        # Calculate the middle index
+        # Using integer division (//) to ensure an integer result
+        mid = (left + right) // 2
+
+        # Check if",82
+7bf7b984411b,3,rank3,Write Python pseudocode for binary search and explain its time complexity.,"### Python Pseudocode for Binary Search
+
+Here is the implementation of the **Binary Search** algorithm in Python pseudocode. This version assumes the input list `arr` is already sorted.
+
+```python
+function binarySearch(arr, target):
+    # Initialize low and high pointers
+    low = 0
+    high = length(arr) - 1
+
+    # Loop while the search space is valid
+    while low <= high:
+        # Calculate the middle index
+        # Using integer division (//) to avoid floating-point numbers
+        mid = (low + high) // 2
+
+        # Check if",82
+f37e9686fdc5,3,rank7,Write Python pseudocode for binary search and explain its time complexity.,"### Python Pseudocode for Binary Search
+
+Here is the standard implementation of binary search using an iterative approach. This algorithm assumes the input list `arr` is **sorted**.
+
+```python
+def binary_search(arr, target):
+    """"""
+    Performs binary search on a sorted list.
+    
+    Args:
+        arr (list): A sorted list of elements.
+        target: The element to search for.
+    
+    Returns:
+        int: The index of the target if found, otherwise -1.
+    """"""
+    left = 0
+    right = len(arr) - 1",73
+fb96973125d1,4,baseline,Explain the difference between correlation and causation with a concrete example.,"### The Core Difference
+
+The fundamental difference lies in the nature of the relationship between two variables:
+
+*   **Correlation** means that two variables **move together**. When one goes up, the other tends to go up (positive correlation) or down (negative correlation). However, this simply indicates a pattern; it does not explain *why* the pattern exists.
+*   **Causation** means that a change in one variable **directly causes** a change in the other. There is a mechanism or a direct link where $A$ leads to $B$.
+
+**Crucial Rule:** Correlation does not",89
+3d40f47bbe91,4,rank3,Explain the difference between correlation and causation with a concrete example.,"### The Core Difference
+
+The fundamental difference lies in the nature of the relationship between two variables:
+
+*   **Correlation** means that two variables **move together**. When one goes up, the other tends to go up (positive correlation) or down (negative correlation). However, this does not mean one causes the other; they might just be reacting to a third, unseen factor.
+*   **Causation** means that a change in one variable **directly produces** a change in the other. If you manipulate Variable A, Variable B *must* change as a result.
+
+**The Golden Rule:** Correlation",92
+20b4ab6e8288,4,rank7,Explain the difference between correlation and causation with a concrete example.,"The fundamental difference between **correlation** and **causation** lies in the nature of the relationship between two variables:
+
+*   **Correlation** means that two variables move together (they change in a predictable pattern), but it does **not** mean that one causes the other.
+*   **Causation** means that a change in one variable directly produces a change in the other.
+
+It is a common statistical fallacy to assume that because two things happen at the same time, one must be causing the other. Often, a third, unseen factor is actually driving both.
+
+### A Concrete Example: Ice",94
+afefd4a80a10,5,baseline,Describe how a vaccine trains the immune system without claiming it guarantees immunity.,"A vaccine functions by introducing a harmless version of a pathogen—or parts of it, such as proteins or genetic instructions—into the body. This controlled exposure acts as a simulation, teaching the immune system to recognize specific threats without causing the actual disease.
+
+When the immune system encounters these antigens, it mounts a defensive response, producing antibodies and activating memory cells. These components are then stored in the body, effectively ""training"" the system to remember the specific enemy. If the real pathogen enters the body later, the trained immune system can detect it immediately and launch a rapid, targeted attack to neutralize it before it causes illness.",106
+80fe58d4aa1e,5,rank3,Describe how a vaccine trains the immune system without claiming it guarantees immunity.,"A vaccine functions by introducing a harmless version of a pathogen—or parts of it, such as proteins or genetic instructions—into the body. This controlled exposure acts as a simulation, teaching the immune system to recognize the specific threat without causing the actual disease.
+
+When the immune system encounters these antigens, it mounts a defensive response, producing antibodies and activating memory cells. These components are then stored in the body, effectively ""training"" the system to remember the pathogen's unique signature. If the real pathogen enters the body later, the trained immune system can detect it immediately and launch a rapid, targeted attack to neutralize it before",105
+63c68606bf56,5,rank7,Describe how a vaccine trains the immune system without claiming it guarantees immunity.,"A vaccine functions by introducing a harmless version of a pathogen—or parts of it, such as proteins or genetic instructions—into the body. This controlled exposure acts as a simulation, teaching the immune system to recognize and remember specific threats without causing the actual disease.
+
+When the immune system encounters these antigens, it mounts a defensive response, producing antibodies and activating white blood cells to neutralize the simulated threat. Crucially, this process also generates **memory cells**. These specialized cells remain in the body long after the vaccine has cleared the antigens. If the real pathogen enters the body in the future, these memory cells can detect it",106
+bd6e2009e5f4,6,baseline,Compare TCP and UDP for someone choosing a protocol for a live video application.,"Choosing between **TCP** and **UDP** for a live video application is one of the most critical decisions in network engineering. The choice fundamentally depends on the trade-off between **data integrity** and **latency/reliability**.
+
+Here is a detailed comparison tailored specifically for live video streaming.
+
+### 1. The Core Philosophy
+*   **TCP (Transmission Control Protocol):** Designed for **reliability**. It guarantees that every packet arrives, in the correct order, and without errors. If a packet is lost, it is retransmitted.
+*   **UDP (User Datagram Protocol):** Designed for **speed and efficiency",87
+ddd9db8ac667,6,rank3,Compare TCP and UDP for someone choosing a protocol for a live video application.,"When choosing a protocol for a **live video application**, the decision often comes down to a trade-off between **reliability** and **real-time performance**.
+
+Here is a detailed comparison of TCP and UDP tailored specifically for live streaming scenarios.
+
+### The Core Difference
+*   **TCP (Transmission Control Protocol)** guarantees delivery. If a packet is lost, it is retransmitted. It ensures data arrives in order and without errors, but this introduces **latency** and can cause **buffering** if the network is slow.
+*   **UDP (User Datagram Protocol)** does not guarantee delivery. It sends data as",91
+ee90ef750ad7,6,rank7,Compare TCP and UDP for someone choosing a protocol for a live video application.,"Choosing between **TCP** (Transmission Control Protocol) and **UDP** (User Datagram Protocol) for a live video application is one of the most critical decisions in network engineering. The choice fundamentally depends on the trade-off between **data integrity** and **latency/reliability**.
+
+Here is a detailed comparison tailored specifically for live video streaming.
+
+### The Core Conflict: Reliability vs. Real-Time
+*   **TCP** guarantees that every packet arrives, in order, and without errors. If a packet is lost, it is retransmitted.
+*   **UDP** does not guarantee delivery, order, or error correction",86
+57a14bfd44d0,7,baseline,Explain why regularization can improve a machine-learning model's test performance.,"Regularization improves a machine learning model's test performance primarily by **reducing overfitting**. Overfitting occurs when a model learns the training data too well, including its noise and random fluctuations, rather than the underlying patterns. This results in excellent performance on training data but poor generalization to unseen test data.
+
+Here is a step-by-step logical deduction of how regularization achieves this:
+
+### 1. The Problem: Overfitting and High Variance
+In machine learning, a model's performance is often measured by its **bias-variance tradeoff**:
+*   **High Bias**: The model is too simple to",90
+dca49e499a72,7,rank3,Explain why regularization can improve a machine-learning model's test performance.,"Regularization improves a machine learning model's test performance primarily by **reducing overfitting**. Overfitting occurs when a model learns the training data too well, including its noise and random fluctuations, resulting in excellent performance on training data but poor generalization to unseen test data.
+
+Here is a step-by-step logical deduction of how regularization achieves this:
+
+### 1. The Problem: Overfitting
+In many machine learning scenarios, especially with complex models (like deep neural networks or high-degree polynomials), the model has too many parameters relative to the amount of training data.
+*   **Without Regularization**: The",92
+d712c27e88e7,7,rank7,Explain why regularization can improve a machine-learning model's test performance.,"Regularization improves a machine learning model's test performance primarily by **reducing overfitting**. Overfitting occurs when a model learns the training data too well, including its noise and random fluctuations, resulting in excellent performance on training data but poor generalization to unseen test data.
+
+Here is a step-by-step logical deduction of how regularization achieves this:
+
+### 1. The Problem: Overfitting
+In many scenarios, especially with complex models (like deep neural networks or high-degree polynomials) and large datasets, the model has too many parameters relative to the amount of information in the training data.
+*   **",94
+16075d6e4768,8,baseline,Describe photosynthesis accurately in under 120 words.,"Photosynthesis is the biological process by which green plants, algae, and certain bacteria convert light energy into chemical energy. Using chlorophyll within chloroplasts, these organisms absorb sunlight to drive a series of reactions that transform carbon dioxide ($CO_2$) from the air and water ($H_2O$) from the soil into glucose ($C_6H_{12}O_6$), a vital sugar for energy. This process simultaneously releases oxygen ($O_2$) as a byproduct. Essentially, photosynthesis serves as the foundation of most food chains, producing organic matter and replenishing atmospheric oxygen while storing",83
+beca33afed87,8,rank3,Describe photosynthesis accurately in under 120 words.,"Photosynthesis is the biological process by which green plants, algae, and some bacteria convert light energy into chemical energy. Using chlorophyll within chloroplasts, these organisms absorb sunlight to drive a series of reactions that transform carbon dioxide ($CO_2$) from the air and water ($H_2O$) from the soil into glucose ($C_6H_{12}O_6$), a vital sugar for energy. This process releases oxygen ($O_2$) as a byproduct, which is essential for most life on Earth. Essentially, photosynthesis serves as the foundation of most food chains and helps regulate",84
+cb263264416e,8,rank7,Describe photosynthesis accurately in under 120 words.,"Photosynthesis is the biological process by which green plants, algae, and some bacteria convert light energy into chemical energy. Using chlorophyll within chloroplasts, these organisms absorb sunlight to drive a series of reactions. Carbon dioxide from the air and water from the soil are transformed into glucose, a vital sugar used for growth and energy, while releasing oxygen as a byproduct. This process occurs primarily in the leaves during daylight hours. It is fundamental to life on Earth, forming the base of most food chains and maintaining atmospheric oxygen levels. Without photosynthesis, aerobic life and the global carbon cycle would not exist.",102
+8bc7d6939ec0,9,baseline,Explain what a confidence interval does and does not mean.,"A **confidence interval (CI)** is a statistical tool used to estimate an unknown population parameter (like a mean, proportion, or difference between groups) based on sample data. It provides a range of plausible values rather than a single, definitive number.
+
+Here is a detailed breakdown of what it means and, crucially, what it does **not** mean.
+
+---
+
+### ✅ What a Confidence Interval DOES Mean
+
+The core concept relies on the **frequentist interpretation** of probability. If you were to repeat your experiment an infinite number of times, drawing a new random sample each time and calculating a confidence interval for each sample",102
+37234ef2a60e,9,rank3,Explain what a confidence interval does and does not mean.,"A **confidence interval (CI)** is a range of values, derived from sample data, that is likely to contain the value of an unknown population parameter (such as the mean or proportion). It is a fundamental tool in statistics used to estimate population characteristics with a specific level of certainty.
+
+Here is a detailed breakdown of what it means and, crucially, what it does **not** mean.
+
+---
+
+### ✅ What a Confidence Interval DOES Mean
+
+The core concept relies on the **frequentist interpretation** of probability. If you were to repeat the same experiment (collecting a sample from the same population) an infinite number",102
+fc8972a775fe,9,rank7,Explain what a confidence interval does and does not mean.,"A **confidence interval (CI)** is a statistical tool used to estimate an unknown population parameter (like a mean, proportion, or difference between groups) based on sample data. It provides a range of plausible values rather than a single fixed number.
+
+Here is a detailed breakdown of what it means and, crucially, what it does **not** mean.
+
+---
+
+### ✅ What a Confidence Interval DOES Mean
+
+The core concept relies on the **frequentist interpretation** of probability. If you were to repeat your experiment an infinite number of times, drawing a new random sample each time and calculating a confidence interval for each sample,",102
+9044e038fffa,10,baseline,Give a balanced explanation of nuclear fission versus nuclear fusion.,"To provide a balanced explanation of **nuclear fission** versus **nuclear fusion**, we must examine their definitions, underlying mechanisms, current technological maturity, energy output, safety profiles, and future potential. Both processes release energy by altering the nucleus of an atom, but they do so in opposite ways and present distinct challenges and opportunities.
+
+### 1. Fundamental Mechanisms
+
+**Nuclear Fission**
+*   **Definition**: The splitting of a heavy atomic nucleus (such as Uranium-235 or Plutonium-239) into two or more lighter nuclei.
+*   **Process**: When a",82
+b928f2ec916b,10,rank3,Give a balanced explanation of nuclear fission versus nuclear fusion.,"To provide a balanced explanation of nuclear fission versus nuclear fusion, we must examine both processes through the lens of their **mechanisms**, **energy output**, **current applications**, and **safety/feasibility challenges**. Both are forms of nuclear reactions that release vast amounts of energy by altering the nucleus of an atom, but they operate on opposite principles and present distinct sets of advantages and hurdles.
+
+### 1. Fundamental Mechanisms
+
+**Nuclear Fission**
+*   **Process**: Fission involves splitting a heavy, unstable atomic nucleus (such as Uranium-235 or Plutonium-239)",83
+1c84b3ef7bc8,10,rank7,Give a balanced explanation of nuclear fission versus nuclear fusion.,"To provide a balanced explanation of **nuclear fission** versus **nuclear fusion**, we must examine their definitions, underlying physics, current applications, challenges, and future potential. Both processes release immense energy by altering the nucleus of an atom, but they operate on opposite principles and face distinct hurdles.
+
+### 1. Fundamental Definitions and Mechanisms
+
+**Nuclear Fission**
+*   **Definition:** Fission is the process where a heavy, unstable nucleus (such as Uranium-235 or Plutonium-239) splits into two or more lighter nuclei.
+*   **Mechanism:** This",80
+0ecbaa96c8e0,11,baseline,Explain how public-key encryption permits secure communication over an insecure channel.,"Public-key encryption (also known as asymmetric encryption) enables secure communication over an insecure channel by solving the fundamental problem of the **Key Distribution Problem**. In traditional symmetric encryption, both parties must share the same secret key beforehand; if that key is intercepted during transmission, the entire communication is compromised. Public-key cryptography eliminates this need by using a pair of mathematically linked keys: a **public key** and a **private key**.
+
+Here is the step-by-step logical deduction of how this system works:
+
+### 1. The Key Pair Generation
+Every user generates a unique pair of keys:
+*   **Public Key**: This",98
+1374a0e54b76,11,rank3,Explain how public-key encryption permits secure communication over an insecure channel.,"Public-key encryption (also known as asymmetric encryption) enables secure communication over an insecure channel by solving the fundamental problem of the **Key Distribution Problem**. In traditional symmetric encryption, both parties must share the same secret key beforehand; if that key is intercepted during transmission, the entire communication is compromised. Public-key encryption eliminates this need by using a pair of mathematically linked keys: a **public key** and a **private key**.
+
+Here is the step-by-step logical deduction of how this system works:
+
+### 1. The Key Pair Generation
+Every user generates a unique pair of keys:
+*   **Public Key**: This",98
+9d2aa75efc27,11,rank7,Explain how public-key encryption permits secure communication over an insecure channel.,"Public-key encryption (also known as asymmetric encryption) enables secure communication over an insecure channel by solving the fundamental problem of the **key distribution dilemma**. In traditional symmetric encryption, both parties must share the same secret key beforehand; if that key is intercepted during transmission, the entire communication is compromised. Public-key encryption eliminates this need by using a mathematically linked pair of keys: a **public key** and a **private key**.
+
+Here is the step-by-step logical deduction of how this system works:
+
+### 1. The Key Pair Generation
+Every user generates a unique pair of keys:
+*   **Public Key**: This",98
