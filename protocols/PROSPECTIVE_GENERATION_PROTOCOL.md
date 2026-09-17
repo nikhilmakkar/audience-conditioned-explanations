@@ -17,7 +17,7 @@ produce a graded change in free-form explanations of eight unseen, invented meth
 - Intervention: add the direction at transformer layer 17 at every token position.
 - Coefficients: `-2, -1, 0, +1, +2`.
 - Decoding: greedy, maximum 128 new tokens.
-- Stimuli: all eight sources in `stimuli_prospective_synthetic.json`, both profile
+- Stimuli: all eight sources in `data/stimuli_prospective_synthetic.json`, both profile
   phrasings, and both reader conditions (domain expert and matched other-domain
   expert). No stimulus may be replaced after outputs are viewed.
 - Independent analysis unit: source/domain (`n=8`), averaging profile phrasings and

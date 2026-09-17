@@ -19,7 +19,7 @@ causally changes which summary the model considers useful for each reader.
 ## Frozen discovery choices
 
 - Discovery model: `Qwen/Qwen3.5-4B` with thinking disabled.
-- Discovery data: all training profiles in `stimuli_domain_matched_8.json`.
+- Discovery data: all training profiles in `data/stimuli_domain_matched_8.json`.
 - Positive class: domain expert.
 - Negative class: equally experienced expert in an unrelated field.
 - Direction: raw difference of class-mean residual activations.

@@ -12,4 +12,4 @@ results/reproduction_*/
 *.aux
 *.log
 *.out
-
+report/report_assets/*.pdf

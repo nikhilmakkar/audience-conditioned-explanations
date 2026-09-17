@@ -15,7 +15,7 @@ by earlier experiments, so it cannot become a new confirmatory result.
 - Model: `Qwen/Qwen3.5-4B`.
 - Frozen representation site: residual stream, layer 17, final prompt token.
 - Discovery data: train profiles from the eight real domains in
-  `stimuli_domain_matched_8.json`.
+  `data/stimuli_domain_matched_8.json`.
 - For each discovery domain, compute one domain-expert minus matched-other-expert
   activation contrast, averaging profile phrasings and balanced A/B order.
 - Stack the eight oriented contrast vectors and take an uncentered SVD.
@@ -27,7 +27,7 @@ by earlier experiments, so it cannot become a new confirmatory result.
 ## Causal evaluation
 
 - Primary test: the eight unfamiliar sources in
-  `stimuli_prospective_synthetic.json` with balanced A/B order.
+  `data/stimuli_prospective_synthetic.json` with balanced A/B order.
 - Intervention: at layer 17 and every token position, orthogonally remove the
   activation projection onto the learned rank-k basis.
 - Outcome: reduction in the natural domain-expert minus other-expert technical-margin

@@ -53,13 +53,11 @@ The prospective methods are synthetic and the candidate summaries received only 
 
 ## Repository layout
 
-- `report/EXECUTIVE_SUMMARY.md` — short account of the question and results
-- `report/FULL_REPORT.md` — full methods, experiments, interpretation, and limitations
+- `report/` — the [executive summary](report/EXECUTIVE_SUMMARY.md), [full report](report/FULL_REPORT.md), detailed experiment records, and figures
 - `protocols/` — prospective and follow-up protocols
-- `stimuli*.json` — passages, reader profiles, and candidate summaries
+- `data/` — passages, reader profiles, and candidate summaries
 - `results/` — result tables, configurations, generations, controls, and saved directions
-- top-level Python files — experiment, analysis, and plotting scripts
-- `FALSIFICATION_REPORT.md` and `MULTIDIMENSIONAL_RESULTS.md` — detailed experiment records
+- `scripts/` — experiment, analysis, data-building, and plotting code; see its index for the main entry points
 
 ## Setup
 
@@ -74,10 +72,10 @@ pip install -r requirements.txt
 The main fixed-direction prospective test can be rerun with:
 
 ```bash
-python fixed_direction_transfer.py \
+python scripts/fixed_direction_transfer.py \
   --model Qwen/Qwen3.5-4B \
-  --discovery stimuli_domain_matched_8.json \
-  --test stimuli_prospective_synthetic.json \
+  --discovery data/stimuli_domain_matched_8.json \
+  --test data/stimuli_prospective_synthetic.json \
   --output-dir results/reproduction_fixed_direction
 ```
 
@@ -94,4 +92,3 @@ Codex was used heavily for implementation, experiment orchestration, plotting, a
 ## Author
 
 Nikhil Makkar
-

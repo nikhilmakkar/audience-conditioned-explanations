@@ -12,7 +12,7 @@ since residual spaces are not shared across architectures.
 
 ## Discovery-only selection
 
-- Discovery data: train profiles from `stimuli_domain_matched_8.json` only.
+- Discovery data: train profiles from `data/stimuli_domain_matched_8.json` only.
 - Representation: final prompt token of the residual stream.
 - Candidate layers: the unique rounded indices at 25%, 37.5%, 50%, 62.5%, and 75%
   of model depth.
@@ -28,7 +28,7 @@ any other decision.
 
 ## Frozen test
 
-- Test data: all eight sources in `stimuli_prospective_synthetic.json`.
+- Test data: all eight sources in `data/stimuli_prospective_synthetic.json`.
 - Add the fixed vector at all token positions, using `+v` for matched-other-expert
   prompts and `-v` for domain-expert prompts.
 - Encodings: A/B, X/Y, and 1/2.
