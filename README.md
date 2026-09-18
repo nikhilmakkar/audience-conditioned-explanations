@@ -1,67 +1,47 @@
-# Does a Language Model Know Which Expert It Is Talking To?
+# Audience-Conditioned Explanation Steering
 
-This project tests whether a language model represents **the relevance of a reader's expertise**, and whether that representation can control its preference for a technical rather than accessible explanation.
+[![Tests](https://github.com/nikhilmakkar/audience-conditioned-explanations/actions/workflows/tests.yml/badge.svg)](https://github.com/nikhilmakkar/audience-conditioned-explanations/actions/workflows/tests.yml)
 
-Instead of comparing an expert with a novice, I compare two equally technical readers: one is an expert in the passage's field and the other is an expert in an unrelated field. Both see the same passage and the same two accurate summaries. The main outcome is the log-probability difference between the technical-summary and accessible-summary answer labels.
+This repository implements experiments for learning linear activation directions from reader-profile contrasts and testing whether those directions change a language model's preference for technical or accessible explanations.
 
-The result is deliberately narrow. In Qwen3.5-4B, an audience-contrast direction is readable and can steer forced-choice summary preference, but removing it explains only a small part of the model's unmodified behaviour. The result does not reliably transfer to free generation or to Phi-3.5 Mini.
+The code covers the complete intervention loop: build matched prompts, capture residual-stream activations, learn a direction or subspace, add or remove it during inference, and compare the result with random and shuffled-label controls. Saved outputs and the research reports are included, so the experiments can be inspected without downloading model weights.
 
-## Main findings
+## What is implemented
 
-- Both Qwen2.5-3B and Qwen3.5-4B prefer the technical summary more when the stated reader has relevant expertise.
-- A direction learned from eight real ML topics increases technical-summary preference in all eight held-out invented domains. This remains 8/8 after changing answer labels from A/B to X/Y and 1/2 and after rewriting the reader profiles.
-- Unmodified activations separate the two reader conditions along this direction (AUC 0.809; 0.836 with rewritten profiles).
-- None of 100 isotropic random directions matches the learned steering effect, but 6/100 shuffled-label directions do. The direction is therefore not cleanly specific to the intended audience labels.
-- Removing the original direction reduces only 0.047 of the natural 0.594 audience gap, about 8%.
-- A rank-3 SVD subspace removes 0.180 of the gap, but a validation-selected one-dimensional mixture inside that subspace nearly matches it. Three necessary dimensions are not established.
-- Steering does not reliably change a preregistered technical-term metric in 160 freely generated gists.
-- Phi-3.5 Mini shows a positive average intervention effect but fails the label, control, and ablation checks. I do not treat this as cross-family replication.
+- Matched expert-versus-expert prompts that vary whether the reader's knowledge is relevant to the passage.
+- Residual-stream activation capture across layers and token positions.
+- Difference-of-means directions, linear decoding, activation addition and projection removal.
+- Alternate answer-label encodings, dose-response sweeps, random directions and shuffled-label controls.
+- SVD subspaces and rank-matched null interventions.
+- Prospective transfer to invented technical domains, free-generation evaluation and cross-family replication.
+- CSV and tensor outputs for every reported experiment.
 
-The main lesson is that **a direction can encode a behavioural contrast and steer an answer while explaining little of the computation the unmodified model normally uses**.
+## Code tour
 
-## Experiment
+| File | Role |
+|---|---|
+| [`scripts/experiment.py`](scripts/experiment.py) | Prompt construction, model loading, next-token scoring and baseline experiments |
+| [`scripts/layer_token_sweep.py`](scripts/layer_token_sweep.py) | Activation capture, forward hooks, direction selection, steering and projection removal |
+| [`scripts/fixed_direction_transfer.py`](scripts/fixed_direction_transfer.py) | Main prospective experiment with alternate labels, ablation, random controls and shuffled-label controls |
+| [`scripts/multidimensional_subspace.py`](scripts/multidimensional_subspace.py) | SVD subspace construction, rank ablations and rank-matched controls |
+| [`scripts/fixed_direction_generation.py`](scripts/fixed_direction_generation.py) | Free-generation intervention and frozen automatic metric |
+| [`scripts/cross_family_replication.py`](scripts/cross_family_replication.py) | Discovery-only layer selection and replication on Phi-3.5 Mini |
+| [`tests/`](tests) | CPU tests for stimulus construction, metrics, direction geometry and intervention hooks |
 
-![Task design](report/report_assets/application_task.png)
+The [script index](scripts/README.md) maps the remaining experiment, analysis and figure-building files.
 
-The learned direction is the difference between mean residual-stream activations for relevant-domain and unrelated-domain expert profiles. The main Qwen3.5-4B direction is extracted at layer 17 from the final prompt token and applied at all token positions in that layer.
+## Experiment flow
 
-![Transfer across invented domains](report/report_assets/exec_final_1_transfer.png)
+1. Construct pairs that differ in the stated reader but keep the passage and candidate summaries fixed.
+2. Capture final-prompt-token residual activations on the discovery domains.
+3. Compute the relevant-expert minus unrelated-expert mean activation difference.
+4. Freeze the direction, layer and evaluation protocol before testing the prospective domains.
+5. Add the direction to test sufficiency and remove its projection to test necessity.
+6. Repeat with random directions, shuffled audience labels, rewritten profiles, new label tokens, generated text and another model family.
 
-The project separately tests:
+## Installation
 
-1. **Behaviour:** does stated relevant expertise change the model's choice?
-2. **Representation:** can the reader contrast be decoded from unmodified activations?
-3. **Sufficiency:** does adding the direction change the answer?
-4. **Necessity:** does removing the direction reduce the natural audience effect?
-5. **Specificity:** do random or shuffled-label directions work equally well?
-6. **Generality:** does the result survive new domains, label tokens, profile wording, free generation, and another model family?
-
-![Steering and ablation](report/report_assets/exec_final_2_interventions.png)
-
-![Random and shuffled controls](report/report_assets/exec_final_3_controls.png)
-
-## Models and data
-
-- **Main model:** `Qwen/Qwen3.5-4B`
-- **Initial behavioural comparison:** `Qwen/Qwen2.5-3B-Instruct`
-- **Cross-family test:** `microsoft/Phi-3.5-mini-instruct`
-- **Discovery set:** eight real ML methods/topics
-- **Prospective set:** eight invented methods from unrelated technical fields
-- **Primary metric:** log P(technical label) - log P(accessible label)
-
-The prospective methods are synthetic and the candidate summaries received only light human review. This is an important limitation, not a substitute for a larger expert-validated dataset.
-
-## Repository layout
-
-- `report/` — the [executive summary](report/EXECUTIVE_SUMMARY.md), [full report](report/FULL_REPORT.md), detailed experiment records, and figures
-- `protocols/` — prospective and follow-up protocols
-- `data/` — passages, reader profiles, and candidate summaries
-- `results/` — result tables, configurations, generations, controls, and saved directions
-- `scripts/` — experiment, analysis, data-building, and plotting code; see its index for the main entry points
-
-## Setup
-
-The experiments require a CUDA-capable GPU and download model weights from Hugging Face.
+The reported experiments used Python 3.10, CUDA 12.4, PyTorch 2.6.0 and Transformers 5.16.1.
 
 ```bash
 python -m venv .venv
@@ -69,7 +49,16 @@ source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
-The main fixed-direction prospective test can be rerun with:
+Model-running scripts require a CUDA-capable GPU and download weights from Hugging Face. The unit tests run on CPU:
+
+```bash
+pip install -r requirements-dev.txt
+pytest
+```
+
+## Reproducing the main experiment
+
+Run commands from the repository root. The main fixed-direction prospective test is:
 
 ```bash
 python scripts/fixed_direction_transfer.py \
@@ -79,15 +68,39 @@ python scripts/fixed_direction_transfer.py \
   --output-dir results/reproduction_fixed_direction
 ```
 
-The committed `results/` directory contains the outputs used in the report, so the conclusions can be inspected without rerunning the models.
+This writes per-domain steering effects, label-encoding summaries, ablation results, control distributions, the learned direction and the complete run configuration.
 
-## Scope
+## Repository layout
 
-This is evidence for linear control of a forced-choice summary preference in Qwen3.5-4B. It is **not** evidence for a universal explanation-depth mechanism, reliable control of generated explanations, or a shared mechanism across model families.
+```text
+data/       passages, reader profiles and candidate summaries
+protocols/  prospective protocols written before follow-up experiments
+report/     executive summary, full report, experiment log and figures
+results/    committed CSV outputs, configurations, generations and directions
+scripts/    experiment, analysis and report-generation code
+tests/      CPU unit tests for the reusable experimental logic
+```
+
+## Result in brief
+
+The main result was mixed. In Qwen3.5-4B, a frozen direction learned from eight real ML topics steered forced-choice summary preference across eight invented domains and survived answer-label and profile-wording changes. However, removing the direction reduced only about 8% of the unmodified audience gap. Six of 100 shuffled-label directions matched its steering effect, and the result did not reliably transfer to free generation or Phi-3.5 Mini.
+
+![The learned direction could steer the forced-choice answer, but removing it explained little of the unmodified audience effect.](report/report_assets/exec_final_2_interventions.png)
+
+The useful methodological result is narrower than the original hypothesis: a direction can encode a behavioural contrast and steer an answer without explaining much of the computation used by the unmodified model.
+
+For the research narrative and limitations, see the [executive summary](report/EXECUTIVE_SUMMARY.md) or [full report](report/FULL_REPORT.md).
+
+## Scope and limitations
+
+- The main endpoint is forced-choice summary preference, not generated explanation quality.
+- The prospective methods are synthetic and received only light human review.
+- The strongest effect is specific to Qwen3.5-4B; the Phi replication failed its controls.
+- The committed outputs are sufficient to audit the reported calculations, but rerunning model interventions requires the model weights and a suitable GPU.
 
 ## AI assistance
 
-Codex was used heavily for implementation, experiment orchestration, plotting, and first-pass prose. I chose the research question, decided which claims required further tests, manually checked the main stimuli and figures, and rejected or revised interpretations that were not supported by the results.
+Codex was used heavily for implementation, experiment orchestration, plotting and first-pass prose. I chose the research question, decided which claims required further tests, manually checked the main stimuli and figures, and rejected or revised interpretations that were not supported by the results.
 
 ## Author
 
