@@ -25,6 +25,6 @@ The repository keeps the complete experimental record, so this directory contain
 - `evaluate_selected_1d_minimal_v2.py` — held-out evaluation of the selected direction
 - `component_interpretation.py` — component-level effects
 
-Files beginning with `analyze_`, `build_`, `make_`, or `plot_` process saved outputs, construct stimuli, or regenerate report assets. The remaining scripts preserve intermediate experiments described in the detailed research log.
+Files beginning with `analyze_`, `build_`, `make_`, or `plot_` process saved outputs, construct stimuli, or regenerate report assets. The remaining scripts preserve intermediate experiments and their saved outputs.
 
 Run commands from the repository root so relative `data/` and `results/` paths resolve consistently.

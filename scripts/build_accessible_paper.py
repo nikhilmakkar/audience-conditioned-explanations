@@ -245,9 +245,8 @@ def build():
     P('Controls. Isotropic vectors test arbitrary directions. Shuffled labels preserve the fitting procedure while destroying the intended meaning. Re-encoded answers test label-token artifacts. Rewritten profiles test carrier wording. WikiText NLL, KL, and top-1 agreement measure ordinary-language disturbance.')
     P('Primary local artifacts', 'H2X')
     for item in [
-        'FALSIFICATION_REPORT.md — chronological experimental record',
+        'report/FULL_REPORT.md — submitted full report',
         'MULTIDIMENSIONAL_SUBSPACE_PROTOCOL.md — frozen rank protocol',
-        'MULTIDIMENSIONAL_RESULTS.md — detailed rank results',
         'results/qwen35_4b_multidimensional_subspace/ — numerical outputs',
         'build_accessible_paper.py — generator for this report',
     ]:

@@ -75,7 +75,7 @@ This writes per-domain steering effects, label-encoding summaries, ablation resu
 ```text
 data/       passages, reader profiles and candidate summaries
 protocols/  prospective protocols written before follow-up experiments
-report/     executive summary, full report, experiment log and figures
+report/     submitted executive summary, full report and figures
 results/    committed CSV outputs, configurations, generations and directions
 scripts/    experiment, analysis and report-generation code
 tests/      CPU unit tests for the reusable experimental logic

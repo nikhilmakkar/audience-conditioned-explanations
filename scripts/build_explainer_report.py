@@ -717,7 +717,7 @@ def build_pdf(images):
     P("All quantitative plots in this PDF are regenerated from CSV outputs by <font name='Courier'>build_explainer_report.py</font>. The report does not recompute model activations.")
     table([
         ["Purpose","File or directory"],
-        ["Detailed chronological record","FALSIFICATION_REPORT.md"],
+        ["Submitted full report","report/FULL_REPORT.md"],
         ["Fixed Qwen prospective outputs","results/qwen35_4b_fixed_direction_prospective/"],
         ["Forced-choice dose responses","results/qwen35_4b_forced_choice_dose/ and qwen35_4b_profile_paraphrase_dose/"],
         ["Free-generation outputs","results/qwen35_4b_fixed_direction_generation/"],
