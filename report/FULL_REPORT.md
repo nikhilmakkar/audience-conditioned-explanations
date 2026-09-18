@@ -334,7 +334,7 @@ Across layers, directions learned before layer 15 had little similarity to the s
 
 1. Arditi, A., Obeso, O., Syed, A., Paleka, D., Panickssery, N., Gurnee, W. and Nanda, N. (2024). [*Refusal in Language Models Is Mediated by a Single Direction*](https://arxiv.org/abs/2406.11717).
 2. Venhoff, C., Arcuschin, I., Torr, P., Conmy, A. and Nanda, N. (2025). [*Understanding Reasoning in Thinking Language Models via Steering Vectors*](https://arxiv.org/abs/2506.18167).
-3. Cloud, A., Le, M., Chua, J., Betley, J., Sztyber-Betley, A., Hilton, J., Marks, S. and Evans, O. (2025). [*Subliminal Learning: Language Models Transmit Behavioral Traits via Hidden Signals in Data*](https://arxiv.org/abs/2507.14805).
+
 
 ## Reproducibility notes
 
